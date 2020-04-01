@@ -68,8 +68,13 @@
   });
 
   //learning how to use a end transition event
+  function removeTransition(e){
+    if(e.propertyName !== 'transform') return; //skip it if it's not a transform
+    this.classList.remove('playing');
+  }
+
   const keys = document.querySelectorAll('.key');
-  keys.forEach
+  keys.forEach(key => addEventListener('transitionend', removeTransition));
 </script>
 
 
